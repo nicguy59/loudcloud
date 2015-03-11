@@ -17,20 +17,20 @@ ActiveRecord::Schema.define(version: 20150310185851) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "song_id",    null: false
+    t.integer  "songs_id",   null: false
     t.text     "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer  "song_id",    null: false
+    t.integer  "songs_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "title",      null: false
     t.text     "embed_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
