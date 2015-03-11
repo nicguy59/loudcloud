@@ -1,0 +1,6 @@
+<p><%= link_to 'Add a new one', new_song_path(song) %></p>
+
+  <% songs.each do |song| %> 
+    <%= render song %>
+    <p><%= link_to song.title, song_path(song) %></p>
+  <% end %>

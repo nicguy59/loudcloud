@@ -1,13 +1,12 @@
 class SongsController < ApplicationController
-#  before_action :lookup_item_type
-#  before_action :lookup_item, only: [:show, :edit, :update, :destroy]
+#  before_action :lookup_song, only: [:show, :edit, :update, :destroy]
 
   def index
-    @songs = @songs.order('title ASC') #title sorted 'Ascending'
+    @songs = Song.all
   end
 
   def show
-    #@items = @item_type.items.find(params[:id])
+    @song = Song.find(params[:id])
   end
   
   def new
@@ -51,12 +50,12 @@ def lookup_item_type
 #  @item_type = ItemType.find(params[:item_type_id])
 end
 
-def lookup_item
-#  @item = @item_type.items.find(params[:id])
+def lookup_song
+  @song = Song.find(params[:id])
 end
 
-def item_params
-#  params.require(:item).permit(:title, :body, :completed_on)
+def song_params
+  params.require(:song).permit(:title, :body)
 end
 
 end
